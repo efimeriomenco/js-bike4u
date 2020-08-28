@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="js/pages/bikes/Bike.js"></script>
+    <script src="js/pages/bikes/bikes.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+    <!--React-->
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!--Bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Parallax -->
+    <script src="/lib/parallax/js/parallax.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-bg-primary bg-primary" id="navbar-size">
+      <a class="navbar-brand" id="bikeshop-text" href="/">BikeShop</a>
+      <form class="form-inline">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+
+        <button
+          class="btn btn-outline-success my-2 my-sm-0"
+          id="submit-search"
+          type="button"
+          onclick="doWork()"
+        >
+          Search
+        </button>
+      </form>
+    </nav>
+
+    <div
+      class="parallax-window"
+      data-parallax="scroll"
+      data-image-src="/img/template.jpg"
+    ></div>
+
+    <div class="bikes-search">
+        <div class="bikes-category-set">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01" id="custom-select-text">Category</label>
+            </div>
+            <select class="custom-select" id="categories-dropdown" >
+              <option selected value="0">--Select category--</option>
+            </select>
+            </div>
+         </div>
+         <div class="bikes-btn-sort">
+          <button type="submit" id="btn-sort">
+            Lowest price to Highest price
+          </button>
+        </div>
+      <div class="bikes-btn-search">
+        <input id="search-input" placeholder="Search your bike..." />
+        <button  id="search-button">Search</button>
+      </div>
+    </div>
+      <div id="bikes-container"></div>
+    </div>
+    <footer>
+      <div class="copyright-container">
+        <div class="row">
+          <div class="col-lg-6">
+            <section
+              class="widget widget-links widget-light-skin"
+              id="first-column"
+            >
+              <h3 class="widget-title">To contact us</h3>
+              <div class="row">
+                <div class="col-md-12" id="contact-us-center">
+                  <div style="color: rgb(255, 255, 255); font-size: 14px;">
+                    <div class="d-flex">
+                      <p>Telephone number:</p>
+                      <a
+                        href="tel:+37322430702"
+                        style="
+                          color: rgb(255, 255, 255);
+                          text-decoration: none;
+                        "
+                        ><span>&nbsp;+373 22 <span>430 702</span></span>
+                      </a>
+                    </div>
+                    Opening hours: <br />
+                    Monday - Friday: 10:00 - 19:00 <br />
+                    Saturnday: 10:00 - 18:00 <br />
+                    Sunday: 10:00 - 17:00 <br />
+                    <a href="#">info@bikeshop.md</a><br />
+                    <br />
+                    <div class="mt-2"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <section class="widget widget-links widget-light-skin">
+              <h3 class="widget-title">Catalog</h3>
+              <ul>
+                <li>
+                  <a href="#">Bikes</a>
+                </li>
+                <li><a href="#">Scooters, rollers, skateboards</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Spare parts</a></li>
+                <li><a href="#">Equipment</a></li>
+              </ul>
+            </section>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <section class="widget widget-links widget-light-skin">
+              <h3 class="widget-title">Informations</h3>
+              <ul data-initial-height="385" class="menu">
+                <li class=" ">
+                  <a href="#" target="_self">
+                    <span>About us</span>
+                  </a>
+                </li>
+                <li class="has-children">
+                  <a href="#" target="_self">
+                    <span>Brands</span>
+                  </a>
+                </li>
+                <li class=" ">
+                  <a href="#" target="_self">
+                    <span>Warranty & Service</span>
+                  </a>
+                </li>
+                <li class="#">
+                  <a href="#" target="_self"><span>Bicycle workshop</span></a>
+                </li>
+                <li class="#">
+                  <a href="#" target="_self"
+                    ><span>Payment and delivery</span></a
+                  >
+                </li>
+                <li class=" ">
+                  <a href="#" target="_self"
+                    ><span>Promotions and discounts</span></a
+                  >
+                </li>
+                <li class=" ">
+                  <a href="#" target="_self"><span>News & Reviews</span></a>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .copyright-container {
+    height: 270px;
+    background-color: #610fd6;
+  }
+  #navbar-size {
+    height: 120px;
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(97, 15, 214, 1) 0%,
+      rgba(97, 15, 214, 1) 50%,
+      rgba(97, 15, 214, 1) 100%
+    );
+  }
+  .row {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 0px;
+  }
+  .first-column {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    flex-direction: column;
+    padding: 6px;
+  }
+  .widget-title {
+    margin-top: 15px;
+    color: white;
+    border-bottom: 2px solid black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  #contact-us-center {
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+  }
+  .bike-price {
+    display: flex;
+  }
+  a {
+     color: grey;
+    text-decoration: none;
+   color: white;
+  }
+  a:hover {
+    transition: 0.3s;
+  }
+  .col-sm-4:hover {
+    transform: scale(1.05);
+    box-shadow: 1px 1px 5px 5px #b290e0;
+    transition: 0.5s;
+    z-index: 1;
+  }
+  .bike-unavailable {
+    opacity: 0.6;
+  }
+  .bikes-search {
+    display: flex;
+    padding: 8px 16px;
+    justify-content: space-between;
+  }
+  .bikes-search #btn-sort {
+    display: flex;
+    justify-content: space-between;
+  }
+  #btn-sort {
+    border: 1px solid #610fd6;
+    border-radius: 5px;
+    background-color: forestgreen;
+    color: white;
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  #btn-sort:hover {
+    background-color: #610fd6;
+    transition: 0.3s;
+  }
+  #search-input {
+    width: 200px;
+    height: 30px;
+  }
+  #search-button {
+    width: 100px;
+    height: 40px;
+    border: 1px solid #610fd6;
+    background-color: forestgreen;
+    color: white;
+    border-radius: 5px;
+  }
+  #search-button:hover {
+    background-color: #610fd6;
+    transition: 0.3s;
+  }
+  .bikes-btn-search {
+    float: left;
+  }
+  .container {
+    display: flex;
+  }
+#custom-select-text{
+background-color:forestgreen;
+color:white;
+  }
+
+</style>

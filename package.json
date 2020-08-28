@@ -1,0 +1,22 @@
+{
+  "name": "bikeshop.web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jquery-validation": "^1.19.2",
+    "react-icons": "^3.10.0",
+    "react-router-dom": "^5.2.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "open": "^7.0.4"
+  }
+}

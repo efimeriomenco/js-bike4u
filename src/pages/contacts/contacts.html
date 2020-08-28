@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="/js/pages/bikes/Bike.js"></script>
+    <script src="/js/pages/bikes/bikes.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/main.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!--React-->
+    <script
+      src="https://unpkg.com/react@16/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!--Bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Parallax -->
+    <script src="/lib/parallax/js/parallax.js"></script>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-bg-primary bg-primary" id="navbar-size">
+      <a class="navbar-brand" id="bikeshop-text" href="/">BikeShop</a>
+      <form class="form-inline">
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+
+        <button
+          class="btn btn-outline-success my-2 my-sm-0"
+          id="submit-search"
+          type="button"
+          onclick="doWork()"
+        >
+          Search
+        </button>
+      </form>
+    </nav>
+
+    <div
+      class="parallax-window"
+      data-parallax="scroll"
+      data-image-src="/img/template.jpg"
+    ></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <form action="" id="form-container" name="registration">
+            <h2>Contact us</h2>
+            <label for="firstname">First Name</label>
+            <input
+              type="text"
+              name="firstname"
+              id="firstname"
+              placeholder="John"
+            />
+
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="john@doe.com"
+            />
+            <label for="message">Message</label>
+            <textarea
+              id="textarea-size"
+              name="message"
+              rows="4"
+              placeholder="Put your message..."
+            ></textarea>
+
+            <button type="submit" id="form-btn">Submit</button>
+          </form>
+        </div>
+        <div class="col-sm-12 col-md-6">
+          <div class="form-description">
+            <h2>Find us on</h2>
+            <div class="row" id="form-icons">
+              <a href="#" class="fa fa-instagram" id="instagram-gradient"></a>
+              <a href="#" class="fa fa-facebook" id="facebook"></a>
+              <a href="#" class="fa fa-google" id="google"></a>
+            </div>
+            <div class="form-phone">
+              <h2>Or</h2>
+              <div class="phone-number">
+                <a href="+37379070302"><h2>079-07-03-02</h2></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="copyright-container">
+        <div class="row">
+          <div class="col-lg-6">
+            <section
+              class="widget widget-links widget-light-skin"
+              id="first-column"
+            >
+              <h3 class="widget-title">To contact us</h3>
+              <div class="row">
+                <div class="col-md-12" id="contact-us-center">
+                  <div style="color: rgb(255, 255, 255); font-size: 14px;">
+                    <div class="d-flex">
+                      <p>Telephone number:</p>
+                      <a
+                        href="tel:+37322430702"
+                        style="
+                          color: rgb(255, 255, 255);
+                          text-decoration: none;
+                        "
+                        ><span>&nbsp;+373 22 <span>430 702</span></span>
+                      </a>
+                    </div>
+                    Opening hours: <br />
+                    Monday - Friday: 10:00 - 19:00 <br />
+                    Saturnday: 10:00 - 18:00 <br />
+                    Sunday: 10:00 - 17:00 <br />
+                    <a href="#">info@bikeshop.md</a><br />
+                    <br />
+                    <div class="mt-2"></div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <section class="widget widget-links widget-light-skin">
+              <h3 class="widget-title">Catalog</h3>
+              <ul>
+                <li>
+                  <a href="#">Bikes</a>
+                </li>
+                <li><a href="#">Scooters, rollers, skateboards</a></li>
+                <li><a href="#">Accessories</a></li>
+                <li><a href="#">Spare parts</a></li>
+                <li><a href="#">Equipment</a></li>
+              </ul>
+            </section>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <section class="widget widget-links widget-light-skin">
+              <h3 class="widget-title">Informations</h3>
+              <ul data-initial-height="385" class="menu">
+                <li class=" ">
+                  <a href="#" target="_self">
+                    <span>About us</span>
+                  </a>
+                </li>
+                <li class="has-children">
+                  <a href="#" target="_self">
+                    <span>Brands</span>
+                  </a>
+                </li>
+                <li class=" ">
+                  <a href="#" target="_self">
+                    <span>Warranty & Service</span>
+                  </a>
+                </li>
+                <li class="#">
+                  <a href="#" target="_self"><span>Bicycle workshop</span></a>
+                </li>
+                <li class="#">
+                  <a href="#" target="_self"
+                    ><span>Payment and delivery</span></a
+                  >
+                </li>
+                <li class=" ">
+                  <a href="#" target="_self"
+                    ><span>Promotions and discounts</span></a
+                  >
+                </li>
+                <li class=" ">
+                  <a href="#" target="_self"><span>News & Reviews</span></a>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/js/pages/contacts/contact.js"></script>
+  </body>
+</html>
+
+<style>
+  .copyright-container {
+    height: 270px;
+    background-color: #610fd6;
+  }
+  #navbar-size {
+    height: 120px;
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(97, 15, 214, 1) 0%,
+      rgba(97, 15, 214, 1) 50%,
+      rgba(97, 15, 214, 1) 100%
+    );
+  }
+  .row {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 0px;
+  }
+  .first-column {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    flex-direction: column;
+    padding: 6px;
+  }
+  .widget-title {
+    margin-top: 15px;
+    color: white;
+    border-bottom: 2px solid black;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  #contact-us-center {
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+  }
+  .bike-price {
+    display: flex;
+  }
+  a {
+    color: white;
+  }
+  a:hover {
+    transition: 0.3s;
+    color: grey;
+    text-decoration: none;
+  }
+  .container {
+    margin: 25px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #form-container {
+    padding: 20px;
+    background-color: #610fd6;
+    color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    height: 600px;
+    display: flex;
+    margin: 20px auto;
+    flex-direction: column;
+  }
+  #form-container label,
+  #form-container input,
+  #form-container button {
+    border: 0;
+    margin-bottom: 3px;
+    display: block;
+    font-style: normal;
+    font-family: "Avantgarde", " TeX Gyre Adventor", "URW Gothic L", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  #form-container input {
+    height: 25px;
+    line-height: 25px;
+    background: #fff;
+    color: #000;
+    padding: 0 6px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  #form-container button {
+    height: 30px;
+    line-height: 30px;
+    background: #e67e22;
+    color: #fff;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  #form-container .error {
+    color: #ff0000;
+  }
+  .container h2 {
+    display: flex;
+    justify-content: center;
+  }
+  #textarea-size {
+    height: 300px;
+  }
+
+  .form-description {
+    padding: 20px;
+    background-color: #610fd6;
+    color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    height: 600px;
+    display: flex;
+    margin: 20px auto;
+    flex-direction: column;
+  }
+  #instagram-gradient {
+    padding: 20px;
+    font-size: 60px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    background: #d6249f;
+    background: radial-gradient(
+      circle at 30% 107%,
+      #fdf497 0%,
+      #fdf497 5%,
+      #fd5949 45%,
+      #d6249f 60%,
+      #285aeb 90%
+    );
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 30%;
+  }
+  #facebook {
+    padding: 20px;
+    font-size: 60px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    background: #3b5998;
+    border-radius: 30%;
+  }
+  #google {
+    padding: 20px;
+    font-size: 60px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    background: #dd4b39;
+    border-radius: 30%;
+  }
+  #form-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15%;
+  }
+  .form-phone {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+  }
+  .phone-number {
+    margin-top: 15%;
+  
+  }
+  .phone-number a{
+    text-decoration-line: hidden;
+  }
+  .phone-number:hover {
+    border-bottom: 2px solid black;
+    color: white;
+    transition: 0.4s;
+  }
+  #form-btn{
+    border-radius: 20%;
+    width: 150px;
+  }
+</style>
